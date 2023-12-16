@@ -6,7 +6,7 @@
 
   "driverSettings": {
     "chrome": {
-      "webDriverVersion": "latest",
+      "webDriverVersion": "120.0.6099.71",
       "capabilities": {
       },
       "options": {
