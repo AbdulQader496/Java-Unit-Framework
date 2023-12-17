@@ -17,7 +17,8 @@ public class BaseTest {
     public void setup() {
         browser = AqualityServices.getBrowser();
         browser.maximize();
-        browser.goTo(SettingsTestData.getEnvData().getHost());
+        browser.goTo("https://the-internet.herokuapp.com/");
+//        browser.goTo(SettingsTestData.getEnvData().getHost());
     }
 
     @AfterMethod
