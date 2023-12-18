@@ -12,11 +12,15 @@ public class BasicAuthTest extends BaseTest {
 
     @BeforeMethod
     public void auth() {
-        // todo: add basic auth
+        browser.network().addBasicAuthentication(
+                "",
+                SettingsTestData.getUserData().getUsername(),
+                SettingsTestData.getUserData().getPassword());
     }
 
     @Test
     public void basicAuthTest() {
-        // todo: add test
+        mainPage.clickNavigationLink(MainPageNavigation.BASIC_AUTH);
+        Assert.assertTrue(basicAuthPage.isSuccessMsgDisplayed(),"message was not displayed");
     }
 }

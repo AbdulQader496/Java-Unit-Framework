@@ -4,9 +4,9 @@ import lombok.Getter;
 
 @Getter
 public class EnvData {
-    private String protocol;
-    private String domain;
-    private int wait;
+    private String protocol = "https";
+    private String domain = "the-internet.herokuapp.com/";
+    private int wait = 30;
     private String host;
 
     public String getHost() {

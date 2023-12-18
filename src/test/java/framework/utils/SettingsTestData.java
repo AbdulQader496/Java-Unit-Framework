@@ -10,9 +10,13 @@ import java.io.FileReader;
 
 @UtilityClass
 public class SettingsTestData {
-    public final String RESOURCE_FILE_PATH = "src/test/resources/";
+    private final String PATH_OF_THE_PROJECT = System.getProperty("user.dir");
+
+
+    public final String RESOURCE_FILE_PATH = PATH_OF_THE_PROJECT + "\\src\\test\\resources\\";
     private final String ENV_FILE_PATH = RESOURCE_FILE_PATH + "env.json";
-    private final String PROD_ENV_FILE_PATH = RESOURCE_FILE_PATH + "prodenv.json";
+    //    private final String PROD_ENV_FILE_PATH = RESOURCE_FILE_PATH + "\\prodenv.json";
+    private final String PROD_ENV_FILE_PATH = RESOURCE_FILE_PATH + "env.json";
     private final String USER_FILE_PATH = RESOURCE_FILE_PATH + "userData.json";
     private final String DATA_TABLE_FILE_PATH = RESOURCE_FILE_PATH + "dataTableData.json";
     private final String FILE_DATA_PATH = RESOURCE_FILE_PATH + "fileData.json";
@@ -23,8 +27,7 @@ public class SettingsTestData {
     private Env getEnvironment() {
         try {
             return gson.fromJson(new FileReader(ENV_FILE_PATH), Env.class);
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             AqualityServices.getLogger().error(ERROR_MSG);
             throw new RuntimeException(ERROR_MSG);
         }
@@ -37,8 +40,7 @@ public class SettingsTestData {
             }
             AqualityServices.getLogger().info("Env is not set");
             throw new RuntimeException(ERROR_MSG);
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             AqualityServices.getLogger().error(ERROR_MSG);
             throw new RuntimeException(ERROR_MSG);
         }
@@ -47,8 +49,7 @@ public class SettingsTestData {
     public UserData getUserData() {
         try {
             return gson.fromJson(new FileReader(USER_FILE_PATH), UserData.class);
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             AqualityServices.getLogger().error(ERROR_MSG);
             throw new RuntimeException(ERROR_MSG);
         }
@@ -57,8 +58,7 @@ public class SettingsTestData {
     public DataTableData getDataTableData() {
         try {
             return gson.fromJson(new FileReader(DATA_TABLE_FILE_PATH), DataTableData.class);
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             AqualityServices.getLogger().error(ERROR_MSG);
             throw new RuntimeException(ERROR_MSG);
         }
@@ -67,8 +67,7 @@ public class SettingsTestData {
     public FileData getFileData() {
         try {
             return gson.fromJson(new FileReader(FILE_DATA_PATH), FileData.class);
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             AqualityServices.getLogger().error(ERROR_MSG);
             throw new RuntimeException(ERROR_MSG);
         }
