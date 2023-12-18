@@ -20,11 +20,14 @@ public class FileDownloadTest extends BaseTest {
 
     @Test
     public void fileUploadTest() {
-        // todo: add test
+        mainPage.clickNavigationLink(MainPageNavigation.FILE_DOWNLOAD);
+        Assert.assertTrue(fileDownloadPage.isFileDownloadLinkDisplayed(FILE_NAME), "File is not displayed");
+        fileDownloadPage.clickFileDownloadLink(FILE_NAME);
+        Assert.assertTrue(FileUtil.isFileExist(downloadedFile), "File is not downloaded");
     }
 
     @AfterMethod
     public void deleteFile() {
-        // todo: add delete file
+        FileUtil.deleteFileIfExist(downloadedFile);
     }
 }
