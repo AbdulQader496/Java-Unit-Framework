@@ -6,6 +6,8 @@ import aquality.selenium.forms.Form;
 import framework.LocatorConstants;
 import org.openqa.selenium.By;
 
+import java.time.Duration;
+
 public class BasicAuthPage extends Form {
     private static final String NAME = "Basic Auth";
     private final By SUCCESS_AUTH = By.xpath(String.format(LocatorConstants.PARTICULAR_TEXT_XPATH,
@@ -17,7 +19,7 @@ public class BasicAuthPage extends Form {
     }
 
     public boolean isSuccessMsgDisplayed() {
-
-        return successLbl.state().isDisplayed();
+        AqualityServices.getBrowser().setImplicitWaitTimeout(Duration.ofSeconds(15));
+        return successLbl.state().waitForDisplayed();
     }
 }

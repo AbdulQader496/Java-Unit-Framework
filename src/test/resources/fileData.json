@@ -1,4 +1,5 @@
 {
   "uploadFile": "upload.json",
-  "downloadFile": "text.txt"
+  "downloadFile": "SteamSetup.exe",
+  "jQueryDownloadFile": "menu.pdf"
 }

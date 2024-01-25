@@ -15,7 +15,7 @@ public class SettingsTestData {
 
     public final String RESOURCE_FILE_PATH = PATH_OF_THE_PROJECT + "\\src\\test\\resources\\";
     private final String ENV_FILE_PATH = RESOURCE_FILE_PATH + "env.json";
-    private final String PROD_ENV_FILE_PATH = RESOURCE_FILE_PATH + "\\prodenv.json";
+    private final String PROD_ENV_FILE_PATH = RESOURCE_FILE_PATH + "prodenv.json";
 //    private final String PROD_ENV_FILE_PATH = RESOURCE_FILE_PATH + "env.json";
     private final String USER_FILE_PATH = RESOURCE_FILE_PATH + "userData.json";
     private final String DATA_TABLE_FILE_PATH = RESOURCE_FILE_PATH + "dataTableData.json";
